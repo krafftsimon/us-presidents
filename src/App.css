@@ -1,0 +1,82 @@
+.president {
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px 30px;
+  border-bottom: 1px solid #8e8e8e;
+  transition: box-shadow 0.15s;
+}
+
+.president:hover {
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.presidents-container {
+  min-height: 1000px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1);
+}
+
+.president h2 {
+  font-weight: 400;
+}
+
+.president h3 {
+  font-weight: 400;
+  color: #494949;
+}
+
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.App h1 {
+  font-size: 40px;
+}
+
+.btn-container {
+  margin: 30px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort-btn {
+  background: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.sort-btn:hover {
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.5);
+}
+
+.sort-btn:focus {
+  outline: none;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20vh;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 470px) {
+  .president {
+    padding: 5px 15px;
+  }
+
+  .App h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+}
