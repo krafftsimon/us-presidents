@@ -21,6 +21,7 @@ class App extends Component {
     this.props.fetchUsPresidents(this.state.curOrder);
   }
 
+  // Fetch the list of presidents in the new order and update the button text.
   toggleOrder() {
     let sortOrder;
     let buttonText;
@@ -38,6 +39,7 @@ class App extends Component {
     });
   }
   
+  // Render error message, loading message, or list of presidents depending on the status of the request
   renderPresidentList() {
     if (this.props.usPresidents.hasError) {
       return <h1 className="error"> Error while retrieving president list... </h1>

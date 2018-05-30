@@ -4,19 +4,23 @@ const path = require('path');
 const app = express();
 const api = require('./api');
 
-
-//app.get('*.js', (req, res, next) => {
-//  if (req.url.substring(0,15) === '/static/js/main') {
-//    req.url = req.url + '.gz';
-//    res.set('Content-Encoding', 'gzip');
-//    res.set('Content-Type', 'application/javascript');
-//    next();
-//  }
-//})
+// If our bundle.js was gzipped to reduce size,
+// this tell the browser that it needs to unzip first. 
+/*
+app.get('*.js', (req, res, next) => {
+  if (req.url.substring(0,15) === '/static/js/main') {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    res.set('Content-Type', 'application/javascript');
+    next();
+  }
+})
+*/
 
 // Serve static files.
 app.use(express.static(path.join(__dirname, '../build')));
 
+// Adds an exception to CORS mechanism.
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://us-presidents.krafftsimon.com');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');

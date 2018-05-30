@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+// Create a store from the root reducer and with thunk as a middleware.
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(
