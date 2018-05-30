@@ -26,7 +26,7 @@ export function errorPresidents() {
 }
 
 export function fetchUsPresidents(sortOrder) {
-  const reqUrl = `http://us-presidents.krafftsimon/api/us-presidents?order=${sortOrder}`;
+  const reqUrl = `http://35.193.240.128:4700/api/us-presidents?order=${sortOrder}`;
   return (dispatch) => {
     dispatch(requestPresidents());
     axios.get(reqUrl)
