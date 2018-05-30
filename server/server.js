@@ -5,17 +5,17 @@ const app = express();
 const api = require('./api');
 
 
-app.get('*.js', (req, res, next) => {
-  if (req.url.substring(0,15) === '/static/js/main') {
-    req.url = req.url + '.gz';
-    res.set('Content-Encoding', 'gzip');
-    res.set('Content-Type', 'application/javascript');
-    next();
-  }
-})
+//app.get('*.js', (req, res, next) => {
+//  if (req.url.substring(0,15) === '/static/js/main') {
+//    req.url = req.url + '.gz';
+//    res.set('Content-Encoding', 'gzip');
+//    res.set('Content-Type', 'application/javascript');
+//    next();
+//  }
+//})
 
 // Serve static files.
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
@@ -29,7 +29,7 @@ app.use('/api', api);
 
 // Return other routes to React index file..
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build/index.html'));
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 
